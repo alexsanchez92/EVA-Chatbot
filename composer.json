@@ -1,0 +1,6 @@
+{
+    "require": {
+        "matthiasmullie/minify": "^1.3",
+        "chewett/php-uglifyjs": "^2.1"
+    }
+}

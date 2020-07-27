@@ -1,0 +1,8 @@
+dispatch:
+  # Send all work to v1.
+  - url: "*/v1/*"
+    service: default
+
+  # Send all work to v2.
+  #- url: "*/v2/*"
+  #  service: service-v2

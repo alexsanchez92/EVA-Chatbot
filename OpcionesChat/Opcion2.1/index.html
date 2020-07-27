@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js" integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+    <link rel="stylesheet" href="comun/css/eva.min.css">
+
+</head>
+<body>
+
+    <div class="container" style="height:100vh;background:#ccc;">
+        <h1>Ventana del SAU</h1>
+    </div>
+    
+    <!-- Modal EVA Info -->
+    <div class="modal fade" id="modalEvaInfo" tabindex="-1" role="dialog" aria-labelledby="evaInfoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" id="modal-eva-container">
+        <div class="modal-content col-sm-12">
+          <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="alert-eva-close">&times;</button>
+                <h4 class="modal-title text-center" id="evaInfoLabel">ASISTENTE VIRTUAL PARA COMERCIOS Y TPVs</h4>
+          </div>
+          <div class="modal-body text-center">
+                <p>Te presentamos a EVA, el nuevo asistente virtual para la resolución de <b>consultas</b> sobre comercios y TPVs mediante asistente virtual (chatbot).</p>
+                <p>Si EVA no fuera capaz de resolver tu consulta, podrás seguir abriendo un ticket en SAU o comenzar un chat con un agente especializado.</p>
+                <p>Tus consultas a EVA nos ayudarán a mejorar el servicio.</p>
+                <p>Muchas gracias</p>
+                <img class="img-circle" src="comun/img/chat.png" id="chat-bubble-modal" style="height: auto;max-width: 100px;border:1px solid #000;cursor:pointer;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="chat-container">
+
+        <div class="frame" id="chat-frame" style="display: none;">
+                
+            <div class="avatar">
+                <img src="comun/img/chat-white.png" id="img-avatar" />
+                <h1 id="chat-title" class="h4" style="margin-left:15px;display: inline-block;">Asistente Virtual para Comercios y TPVs</h1>
+                <button id="close-chat" type="button" class="close" aria-label="Close" style="margin:10px; font-size: 3em; position: absolute;top:0;right: 0;color:#fff;opacity:0.8;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+                <div id="chatra-frame" style="margin-left:0;"></div>
+
+                <ul id="chat-conversation" style="margin-left:0;"></ul>
+                                
+                <div id="eva-text" style="background: #fff;">                    
+                    <input style="width: 75%;height: 55px;display: block;" class="mytext" id="mytext" placeholder="Escríbeme..." maxlength="256" />
+
+                    <p id="char_left" style="padding: 4px;color:#bbb;padding-top:20px;">0/256</p>
+                    <div id="send-button">
+                        <span class="glyphicon glyphicon-share-alt" id="sendMessage" style="cursor: pointer;font-size: 1.4em; color: #fff"></span>
+                    </div> 
+                    <div  id="typing-box" style="padding:10px;margin:5px;display: inline-block;height: 50px;width: 50px;">
+                        <img src="comun/img/typing.gif" alt="" style="max-width: 60px;height: auto;">
+                    </div>                
+                </div>
+
+        </div>  
+
+        <img class="img-circle" src="comun/img/chat.png" id="chat-bubble" style="display:none;"/>
+        
+    </div>
+
+    <script src="comun/js/eva.min.js"></script>
+
+</body>
+</html>
